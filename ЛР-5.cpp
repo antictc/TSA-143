@@ -36,7 +36,7 @@ int sumOfNegativeElements(const int* array, const int n);
  * @brief сумма элементов значение которых не больше A
  * @param A-число введённое пользователем
  */
-int countPositiveLessThanA(const int* array, const int n, int A);
+int countPositiveLessThanA(const int* array, const int n, const int A);
 /**
  *@brief-вычисление номера последней пары соседних элементов с разными знаками  
  *@param array[i] 
@@ -160,8 +160,10 @@ int sumOfNegativeElements(int* array, const int n)
     }
     return sum;
 }
-int countPositiveLessThanA(int* array, const int n, int A) 
+int countPositiveLessThanA(int* array, const int n, const int A)
+
 {
+    if (start < end ) {abort();}
     int count = 0;
     for (size_t i = 0; i < n; i++) 
     {
