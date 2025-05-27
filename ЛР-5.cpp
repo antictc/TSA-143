@@ -53,8 +53,8 @@ int findLastPair(const int* array, const int n);
  * @param array[i]
  * @param n-размер массива 
  * @param size_t n-размер массива 
- * @param start-начальный диапазон 
- * @param end-конечный диапазон 
+ * @param start-начальное значение  
+ * @param end-конечное значение  
  */
 void fillRandom(int* array, const size_t n, const int start, const int end);
 /**
