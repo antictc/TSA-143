@@ -46,7 +46,10 @@ int findLastPair(const int* array, const int n);
  *@brief-функция для заполнения массива случайными числами промежутка 
  */
 void fillRandom(int* array, const size_t n, const int start, const int end);
-
+/**
+* @brief Точка входа в программу
+* @return 1, если программа выполнена корректно, иначе 0
+*/
 int main() {
     enum { RANDOM = 1, MANUAL = 2 };
 
