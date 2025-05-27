@@ -21,27 +21,27 @@ void checkN(const int n);
  *@brief ввод элементов массива с клавиатуры
  * @param array[i]
  */
-void fillArray(int* array, const int n);
+void fillArray(cost int* array, const int n);
 /**
  *@brief вывод массива в консоль
  * @param array[i]
  */
-void printArray(int* array, const int n);
+void printArray(const int* array, const int n);
 /**
  * @brief суммирует отрицательные элементы массива
  * @param array[i]<0
  */
-int sumOfNegativeElements(int* array, const int n);
+int sumOfNegativeElements(const int* array, const int n);
 /**
  * @brief сумма элементов значение которых не больше A
  * @param A-число введённое пользователем
  */
-int countPositiveLessThanA(int* array, const int n, int A);
+int countPositiveLessThanA(const int* array, const int n, int A);
 /**
  *@brief-вычисление номера последней пары соседних элементов с разными знаками  
  *@param array[i] 
  */
-int findLastPair(int* array, const int n);
+int findLastPair(const int* array, const int n);
 /**
  *@brief-функция для заполнения массива случайными числами промежутка 
  */
