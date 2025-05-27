@@ -133,10 +133,10 @@ void fillArray(int* array, const int n)
         array[i] = getValue();
     }
 }
-void fillArrayRandom(int* array, const int n) 
+void fillArrayRandom(int* array, const int n, const int start, const int end) 
 {
     for (size_t i = 0; i < n; i++) {
-        array[i] = rand() % 301 - 100; // Генерация случайных чисел в диапазоне [-100; 200]
+        array[i] = rand() % (end - start + 1); // Генерация случайных чисел в диапазоне [-100; 200]
     }
 }
 void printArray(int* array, const int n)
