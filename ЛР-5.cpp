@@ -22,7 +22,7 @@ void checkN(const int n);
  * @param array[i]
  * @param  n-размер массива 
  */
-void fillArray(cost int* array, const int n);
+void fillArray(int* array, const int n);
 /**
  *@brief вывод массива в консоль
  * @param array[i]
@@ -150,7 +150,7 @@ void fillArrayRandom(int* array, const int n, const int start, const int end)
         array[i] = rand() % (end - start + 1); // Генерация случайных чисел в диапазоне [-100; 200]
     }
 }
-void printArray(int* array, const int n)
+void printArray(const int* array, const int n)
 {
     cout << "Массив: ";
     for (size_t i = 0; i < n; i++) 
