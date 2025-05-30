@@ -34,7 +34,7 @@ void printArray(const int* array, const int n);
  * @param array[i]<0
  * @param n-размер массива 
  */
-int sumOfNegativeElements(const int* array, const int n);
+int sumOfNegativeElements(const int* array, const int n);  
 /**
  * @brief сумма элементов значение которых не больше A
  * @param A-число введённое пользователем
