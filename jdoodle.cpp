@@ -83,8 +83,8 @@ void checkE(const double e) {
 double sumN(const int n) {
     double sum = 0.0;
     double term = 0.0; 
-    for (int k = 1; k <= n; ++k) {
-        term = (k == 1) ? 1 : (-1.0 / k) * term; 
+    for (int k = 1; k < n; ++k) {
+        term = (k == 0) ? 0 : (-1.0 / k) * term; 
         sum += term;
     }
     return sum;
