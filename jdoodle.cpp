@@ -124,16 +124,16 @@ bool checkPositiveInput(const int value)
 }
 
 void fillArrayRandomly(int** array, int rows, int cols) {
-    for (int i = 0; i < rows; ++i) {
-        for (int j = 0; j < cols; ++j) {
+    for (size_t i = 0; i < rows; ++i) {
+        for (size_t j = 0; j < cols; ++j) {
             array[i][j] = rand() % 100 - 50; // Генерация чисел от -50 до 49
         }
     }
 }
 
 int findMaxAbsIndex(int** array, int rows, int column) {
-    int maxAbsValue = 0;
-    for (int i = 1; i < rows; ++i) {
+    int maxAbsIndex = 0;
+    for (size_t i = 1; i < rows; ++i) {
         if (abs(array[i][column]) > abs(array[maxAbsValue][column])) {
             maxAbsValue = i;
         }
@@ -142,9 +142,9 @@ int findMaxAbsIndex(int** array, int rows, int column) {
 }
 
 void replaceZeroWithMaxAbsElement(int** array, const int rows, const int cols) {
-    for (int j = 0; j < cols; ++j) {
+    for (size_t j = 0; j < cols; ++j) {
         int maxAbsIndex = findMaxAbsIndex(array, rows, j);
-        for (int i = 0; i < rows; ++i) {
+        for (size_t i = 0; i < rows; ++i) {
             if (array[i][j] == 0) {
                 array[i][j] = array[maxAbsIndex][j];
             }
@@ -153,9 +153,9 @@ void replaceZeroWithMaxAbsElement(int** array, const int rows, const int cols) {
 }
 
 void insertZerosAfterMaxAbsColumn(int** array, int** arr3, const int rows, const int cols) {
-    for (int j = 0; j < cols; ++j) {
+    for (size_t j = 0; j < cols; ++j) {
         int maxAbsIndex = findMaxAbsIndex(array, rows, j);
-        for (int i = 0; i < rows; ++i) {
+        for (size_t i = 0; i < rows; ++i) {
             arr3[i][j] = array[i][j];
         }
         if (maxAbsIndex != rows - 1) {
@@ -167,8 +167,8 @@ void insertZerosAfterMaxAbsColumn(int** array, int** arr3, const int rows, const
 }
 
 void printArray(int** array, const int rows, const int cols) {
-    for (int i = 0; i < rows; ++i) {
-        for (int j = 0; j < cols; ++j) {
+    for (size_t i = 0; i < rows; ++i) {
+        for (size_t j = 0; j < cols; ++j) {
             cout << array[i][j] << "\t";
         }
         cout << endl;
@@ -176,7 +176,7 @@ void printArray(int** array, const int rows, const int cols) {
 }
 
 double getValue() {
-    double value;
+    double value = 0;
     cin >> value;
     if (cin.fail()) {
         cout << "Некорректное значение" << endl;
@@ -187,7 +187,7 @@ double getValue() {
 
 int** getNewArray(const int rows, const int cols) {
     int** array = new int*[rows];
-    for (int i = 0; i < rows; ++i) {
+    for (size_t i = 0; i < rows; ++i) {
         array[i] = new int[cols]();
     }
     return array;
@@ -195,8 +195,8 @@ int** getNewArray(const int rows, const int cols) {
 
 int** copyArray(int** arr, const int rows, const int cols) {
     int** resultArray = getNewArray(rows, cols);
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < cols; j++) {
+    for (size_t i = 0; i < rows; i++) {
+        for (size_t j = 0; j < cols; j++) {
             resultArray[i][j] = arr[i][j];
         }
     }
@@ -204,7 +204,7 @@ int** copyArray(int** arr, const int rows, const int cols) {
 }
 
 void deleteArray(int** arr, const int rows) {
-    for (int i = 0; i < rows; ++i) {
+    for (size_t i = 0; i < rows; ++i) {
         delete[] arr[i];
     }
     delete[] arr;
