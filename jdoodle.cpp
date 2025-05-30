@@ -42,13 +42,6 @@ double sumN(const int n);
  */
 double sumE(const double e);
 
-/**
- * @brief Вычисляет факториал числа (итеративно)
- * @param k число
- * @return k!
- */
-double factorial(int k);
-
 /** @brief точка входа в программу 
  * @return 0 
  */
@@ -104,18 +97,10 @@ void checkE(const double e) {
     }
 }
 
-double factorial(int k) {
-    double result = 1.0;
-    for (int i = 2; i <= k; ++i) {
-        result *= i;
-    }
-    return result;
-}
-
 double sumN(const int n) {
     double sum = 0.0;
-    for (int k = 0; k <= n; ++k) {
-        double term = pow(-1, k) * (1 + k) / factorial(k);
+    for (int k = 0; k < n; ++k) {
+        double term = pow(-1, k) / pow(k + 1, 2);
         sum += term;
     }
     return sum;
@@ -125,7 +110,7 @@ double sumE(const double e) {
     double sum = 0.0;
     int k = 0;
     while (true) {
-        double term = pow(-1, k) * (1 + k) / factorial(k);
+        double term = pow(-1, k) / pow(k + 1, 2);
         if (fabs(term) < e) {
             break;
         }
