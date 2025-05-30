@@ -15,6 +15,8 @@ double getValue();
 * @param array Указатель на двумерный массив.
 * @param rows Количество строк в массиве.
 * @param cols Количество столбцов в массиве.
+* @param start начальное значение 
+* @param end конечное значение
 */
 void fillArrayRandomly(int** array, const int rows, const int cols);
 
@@ -94,7 +96,9 @@ int main()
     }
     
     int** arr1 = getNewArray(max_rows, max_cols);
-    fillArrayRandomly(arr1, max_rows, max_cols);
+    start = getValue();
+    end = getValue(); 
+    fillArrayRandomly(arr1, max_rows, max_cols, start, end);
 
     cout << "Случайно заполненный массив:" << endl;
     printArray(arr1, max_rows, max_cols);
@@ -126,7 +130,7 @@ bool checkPositiveInput(const int value)
 void fillArrayRandomly(int** array, int rows, int cols) {
     for (size_t i = 0; i < rows; ++i) {
         for (size_t j = 0; j < cols; ++j) {
-            array[i][j] = rand() % 100 - 50; // Генерация чисел от -50 до 49
+            array[i][j] = rand() % (start - end + 1); // Генерация чисел от -50 до 49
         }
     }
 }
