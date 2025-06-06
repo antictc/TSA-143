@@ -66,7 +66,13 @@ int main() {
             start = getValue();
             cout << "Enter end: ";
             end = getValue();
-
+            
+            if (start > end) {
+        cout << "Error: start must be less than or equal to end" << endl;
+        delete[] array;
+        return 1;
+            }
+                
             fillRandom(array, n, start, end); // Заполняем массив случайными числами
             break;
         case MANUAL:
