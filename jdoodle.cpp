@@ -76,6 +76,10 @@ void deleteArray(int** arr, const int rows);
 */
 bool checkPositiveInput(const int value);
 
+/**
+* @brief Точка входа в программу
+* @return 0, если программа выполнена корректно, иначе 1
+*/
 int main()
 {
     setlocale(LC_ALL, "Russian");
