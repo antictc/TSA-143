@@ -104,6 +104,12 @@ int main()
     end = getValue(); 
     fillArrayRandomly(arr1, max_rows, max_cols, start, end);
 
+    if (start > end) {
+    cout << "Ошибка: значение start должно быть меньше или равно end." << endl;
+    deleteArray(arr1, max_rows);
+    return 1;
+}
+
     cout << "Случайно заполненный массив:" << endl;
     printArray(arr1, max_rows, max_cols);
 
