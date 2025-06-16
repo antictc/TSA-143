@@ -82,7 +82,7 @@ void checkE(const double e) {
 }
 double sumN(const int n) {
     double sum = 0.0;
-    double term = 0.0; 
+    double term = 1; 
     for (int k = 1; k < n; ++k) {
         term = (k == 0) ? 0 : (-1.0 / k) * term; 
         sum += term;
@@ -91,12 +91,9 @@ double sumN(const int n) {
 }
 double sumE(const double e) {
     double sum = 0.0;
-    double term = 0.0; 
+    double term = 1; 
     int k = 1;
-    while (true) {
-    while (fabs(term) > e) {
-        term = (k == 1) ? 1 : (-1.0 / k) * term; 
-        if (fabs(term) > e) break;
+
         sum += term;
         k++;
     }
